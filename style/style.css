@@ -350,19 +350,18 @@ header {
     box-shadow: 10px 10px 0 rgba(201, 123, 123, 0.15);
 }
 
+/* SOBRE */
 
 #sobre {
     padding: var(--espaco-lg) var(--espaco-md);
     background-color: var(--creme);
 }
 
-
 #sobre p {
     font-size: 0.95rem;
     line-height: 1.75;
     margin-bottom: var(--espaco-sm);
 }
-
 
 #sobre h3 {
     color: var(--rosa);
@@ -371,24 +370,43 @@ header {
 }
 
 
-.introducao {
-    font-size: 1.05rem;
-}
-
 #sobre > .Bianca {
     max-width: 680px;
     margin: 0 auto;
 }
 
 
-
-
-
 .introducao {
     font-family: 'Playfair Display', serif;
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     color: var(--cinza);
 }
+
+
+
+
+
+
+
+.frases-historia {
+    padding: 24px 18px;
+}
+
+.frases-historia p {
+    font-size: 1.05rem;
+    margin-bottom: 16px;
+}
+
+.fechamento-historia {
+    padding: 18px 8px;
+}
+
+.fechamento-historia strong {
+    margin-top: 20px;
+    font-size: 1.45rem;
+}
+
+
 
 .historia-item {
     position: relative;
@@ -440,14 +458,24 @@ header {
     letter-spacing: 0.15rem;
 }
 
+
+.historia-marcador span {
+    padding: 5px 10px;
+    font-size: 0.65rem;
+}
+
+
 .historia-conteudo h3 {
-    margin-bottom: 14px;
+    margin-bottom: var(--espaco-xl);
 }
 
 .historia-conteudo p {
+    font-size: 0.93rem;
     line-height: 1.75;
-    margin-bottom: 18px;
+    margin-bottom: var(--espaco-sm);
 }
+
+
 
 .historia-conteudo {
     margin: var(--espaco-md) 0 0;
@@ -807,50 +835,9 @@ footer p:last-child{
 
 
 
-
-/* SOBRE */
-
-
-
-
 /* HISTÓRIA */
-.historia-item {
-    margin: 22px 0;
-    padding-left: 22px;
-}
 
-.historia-conteudo h3 {
-    margin-bottom: 10px;
-}
 
-.historia-conteudo p {
-    font-size: 0.93rem;
-    line-height: 1.7;
-    margin-bottom: 14px;
-}
-
-.historia-marcador span {
-    padding: 5px 10px;
-    font-size: 0.65rem;
-}
-
-.frases-historia {
-    padding: 24px 18px;
-}
-
-.frases-historia p {
-    font-size: 1.05rem;
-    margin-bottom: 16px;
-}
-
-.fechamento-historia {
-    padding: 18px 8px;
-}
-
-.fechamento-historia strong {
-    margin-top: 20px;
-    font-size: 1.45rem;
-}
 
 /* PRODUTOS */
 #produtos {
