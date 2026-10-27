@@ -192,8 +192,9 @@ header {
 /* HERO */
 
 .hero-clean {
-    min-height: calc(100svh - 50px);
-    min-height: calc(100vh - 50px);
+    min-height: calc(100vh - 60px);
+    min-height: calc(100svh - 60px);
+    
 
     display: grid;
     place-items: center;
@@ -384,7 +385,7 @@ header {
 
 #sobre .titulo {
     margin: 0 0 var(--espaco-sm);
-    font-size: clamp(1.8rem, gvh, 2.4rem);
+    font-size: clamp(1.8rem, 3vh, 2.4rem);
 }
 
 #sobre .detalhe {
@@ -449,21 +450,16 @@ header {
 
 .historia-marcador span {
     display: inline-block;
-    padding: 6px 12px;
+    padding: 5px 10px;
     border: 1px solid rgba(201, 123, 123, 0.35);
     background-color: rgba(228, 138, 138, 0.06);
     border-radius: 999px;
     color: var(--rosa);
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: bold;
     letter-spacing: 0.15rem;
 }
 
-
-.historia-marcador span {
-    padding: 5px 10px;
-    font-size: 0.65rem;
-}
 
 
 .historia-conteudo h3 {
@@ -664,11 +660,7 @@ header {
     color: white;
 }
 
-.botao-contato.principal {
-    background-color: var(--rosa);
-    border-color: var(--rosa);
-    color: white;
-}
+
 
 .botao-contato.principal:hover {
     background-color: var(--rosa-claro);
@@ -725,57 +717,6 @@ footer p:last-child{
 
 
 
-
-
-
-
-/* CELULARES MAIS LARGOS E TABLETS */
-
-@media (min-width: 300px) {
-
-    #sobre .eyebrow{
-    margin-top: var(--espaco-lg);
-}
-    .hero-clean-titulo {
-        font-size: clamp(2.7rem, 7vw, 3.5rem);
-    }
-
-    .hero-clean {
-        padding-inline: 32px;
-    }
-}
-
-@media (min-width: 600px) {
-    .produtos-container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-
-/* DESKTOP */
-
-@media (min-width: 768px) {
-    .hero-clean {
-        min-height: min(760px, calc(100vh - 70px));
-        padding: 72px 40px;
-    }
-
-    .hero-clean-titulo {
-        font-size: clamp(3.2rem, 5vw, 4.5rem);
-    }
-
-    .hero-clean-botao:hover {
-        background-color: var(--rosa);
-        transform: translateY(-2px);
-    }
-}
-
-@media (min-width: 900px) {
-    .produtos-container {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-}
-
 /* TELAS BAIXAS: EVITA EXCESSO DE ESPAÇO VERTICAL */
 
 @media (max-height: 650px) {
@@ -811,10 +752,23 @@ footer p:last-child{
 
 
 
-/* CELULARES MUITO ESTREITOS */
+/* =========================================
+   RESPONSIVIDADE
+   O CSS principal atende primeiro ao celular
+========================================= */
+
+/* Celulares estreitos */
 @media (max-width: 360px) {
-    #hero.hero-clean {
+    header {
+        padding-inline: 12px;
+    }
+
+    .hero-clean {
         padding-inline: 16px;
+    }
+
+    .hero-clean-titulo {
+        font-size: 1.9rem;
     }
 
     .hero-clean-eyebrow {
@@ -822,33 +776,24 @@ footer p:last-child{
         letter-spacing: 0.1em;
     }
 
-    .hero-clean-titulo {
-        font-size: 1.9rem;
-    }
-
-    .hero-clean-botao {
-        padding-inline: 14px;
-        font-size: 0.78rem;
-    }
-
-    .card-produto img{
-        height: 190px;
-    }
-
     #sobre,
-    #produtos{
+    #produtos,
+    #contatos {
         padding-inline: 16px;
+    }
+
+    .card-produto img {
+        height: auto;
+        aspect-ratio: 4 / 3;
     }
 }
 
-/* TELAS MAIORES */
-@media (min-width: 768px) {
-    #sobre {
-        padding: 56px 32px;
-    }
-
-    #produtos{
-        padding: 48px 28px;
+/* Tablets */
+@media (min-width: 600px) {
+    #sobre,
+    #produtos,
+    #contatos {
+        padding-inline: 32px;
     }
 
     .produtos-container {
@@ -856,15 +801,329 @@ footer p:last-child{
         gap: 24px;
     }
 
+    .redes {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .botao-contato {
+        flex: 1 1 180px;
+    }
+
+    .mapa iframe {
+        height: 320px;
+    }
+}
+
+/* Computadores */
+@media (min-width: 900px) {
+    header {
+        min-height: 72px;
+        padding-inline: max(32px, calc((100% - 1200px) / 2));
+    }
+
+    .hero-clean {
+        min-height: min(760px, calc(100svh - 72px));
+        padding: 72px 40px;
+    }
+
+    .hero-clean-conteudo {
+        max-width: 760px;
+    }
+
+    .hero-clean-titulo {
+        max-width: 18ch;
+        font-size: clamp(3.2rem, 4.5vw, 4.5rem);
+    }
+
+    .hero-clean-descricao {
+        font-size: 1.1rem;
+    }
+
+    #sobre,
+    #produtos,
+    #contatos {
+        padding-block: 72px;
+    }
+
+    #sobre {
+        padding: 80px 40px;
+    }
+   
+    #sobre .sobre-texto {
+        min-width: 0;
+    }
+
+    #sobre .Bianca {
+        max-width: var(--largura-conteudo);
+        margin-inline: auto;
+    }
+
+    #sobre .eyebrow {
+        margin-bottom: 20px;
+    }
+
+     #sobre .sobre-intro {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: center;
+        gap: 56px;
+        margin-bottom: 64px;
+    }
+
+    #sobre .sobre-texto {
+        min-width: 0;
+    }
+
+    #sobre .sobre-texto .titulo {
+        font-size: clamp(2.4rem, 3vw, 3.2rem);
+        line-height: 1.12;
+    }
+
+    #sobre .sobre-intro .BiancaJornal {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        object-fit: contain;
+    }
+
+    #sobre .historia-item {
+        max-width: 850px;
+        margin-inline: auto;
+    }
+
+    #sobre .BiancaJornal {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        object-fit: contain;
+    }
+
+    #sobre .titulo {
+        font-size: clamp(2.4rem, 3vw, 3.2rem);
+        line-height: 1.12;
+    }
+
+    #sobre .detalhe {
+        margin: 24px 0;
+    }
+
+    #sobre .introducao {
+        max-width: 38ch;
+        font-size: 1.1rem;
+    }
+
+    /* LINHA DO TEMPO — DESKTOP */
+
+#sobre .Bianca {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 0;
+    row-gap: 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Linha vertical central */
+#sobre .Bianca::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: rgba(201, 123, 123, 0.35);
+    transform: translateX(-50%);
+}
+
+/* Cada etapa da história */
+#sobre .historia-item {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0 44px;
+    position: relative;
+}
+
+/* Etapas ímpares: coluna esquerda */
+#sobre .historia-item:nth-child(odd) {
+    grid-column: 1;
+    text-align: right;
+}
+
+/* Etapas pares: coluna direita */
+#sobre .historia-item:nth-child(even) {
+    grid-column: 2;
+    text-align: left;
+}
+
+/* Esconde a linha individual antiga */
+#sobre .historia-item::before {
+    display: none;
+}
+
+/* Marcador da etapa */
+#sobre .historia-marcador {
+    display: flex;
+    margin-bottom: 18px;
+    position: relative;
+}
+
+#sobre .historia-item:nth-child(odd) .historia-marcador {
+    justify-content: flex-end;
+}
+
+#sobre .historia-item:nth-child(even) .historia-marcador {
+    justify-content: flex-start;
+}
+
+/* Ponto que encosta na linha central */
+#sobre .historia-marcador::before {
+    top: 50%;
+    width: 9px;
+    height: 9px;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+#sobre .historia-item:nth-child(odd)
+.historia-marcador::before {
+    left: auto;
+    right: -49px;
+}
+
+#sobre .historia-item:nth-child(even)
+.historia-marcador::before {
+    left: -49px;
+}
+
+/* Conteúdo */
+#sobre .historia-conteudo {
+    margin: 0;
+}
+
+#sobre .historia-conteudo h3 {
+    margin-bottom: 16px;
+    font-size: 1.55rem;
+    line-height: 1.2;
+}
+
+#sobre .historia-conteudo p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+/* Imagens da história */
+#sobre .historia-conteudo .BiancaJornal {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    height: auto;
+    object-fit: cover;
+    margin: 24px 0;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+/* A imagem final não deve ficar colada ao próximo item */
+#sobre .historia-item:last-child {
+    padding-bottom: 0;
+}
+
+   
+
+
+
+
+    .produtos-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 28px;
+    }
+
     .card-produto img {
-        height: 280px;
+        height: auto;
+        aspect-ratio: 4 / 3;
     }
 
     #contatos {
-        padding: 60px 32px;
+        padding-inline: max(40px, calc((100% - 1100px) / 2));
     }
 
-    .redes {
-        max-width: 420px;
+    .mapa iframe {
+        height: 380px;
+    }
+
+    
+
+
+    /* Menu horizontal no desktop */
+    #menu {
+        display: none;
+    }
+
+    #itens {
+        position: static;
+        width: auto;
+        flex-direction: row;
+        align-items: center;
+        gap: 24px;
+
+        padding: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    #itens a {
+        padding: 8px 0;
+        border-bottom: none;
+        font-size: 0.75rem;
+    }
+
+    #itens a:hover {
+        color: white;
+    }
+
+    
+
+   
+}
+
+/* Telas baixas: reduz espaços verticais do hero */
+@media (max-height: 650px) {
+    .hero-clean {
+        padding-block: 28px;
+    }
+
+    .hero-clean-eyebrow {
+        margin-bottom: 18px;
+    }
+
+    .hero-clean-detalhe {
+        margin-top: 18px;
+    }
+
+    .hero-clean-descricao {
+        margin-top: 12px;
+    }
+
+    .hero-clean-botao {
+        margin-top: 18px;
+    }
+}
+
+/* Respeita preferência por menos animação */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }
