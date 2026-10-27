@@ -408,6 +408,7 @@ header {
 
 
 
+
 .historia-item {
     position: relative;
     margin: var(--espaco-md) 0;
@@ -481,52 +482,45 @@ header {
 
 
 
-.galeria{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-}
 
-.galeria img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.galeria img:first-child {
-    aspect-ratio: 3/4;
-    object-fit: cover;
-}
 
 #produtos{
-    padding: 40px 20px;
+    padding: 32px 16px;
     background-color: var(--off-white);
 }
 
 #produtos .titulo {
-    font-size: clamp(2rem, 8vw, 3.2rem);
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+    line-height: 1.1;
+}
+
+.produtos-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
 }
 
 .categoria-produto {
     display: block;
     color: var(--rosa);
-    font-size: 0.65rem;
+    font-size: 0.62rem;
     font-weight: bold;
-    letter-spacing: 0.12rem;
+    letter-spacing: 0.1rem;
     margin-bottom: 8px;
 }
+
 .titulo-secao {
     max-width: 650px;
     margin: 0 auto 40px;
+    margin-bottom: 24px;
 
 }
 
 .titulo-secao > p:first-child {
     color: var(--rosa);
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: bold;
-    letter-spacing: 0.15rem;
+    letter-spacing: 0.12rem;
     
 }
 
@@ -535,14 +529,16 @@ header {
 }
 
 .titulo-secao > p:last-child {
-    line-height: 1.7;
+    line-height: 1.65;
+    font-size: 0.93rem;
 }
 
-.produtos-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-}
+
+
+
+
+
+
 
 .card-produto {
     min-width: 0;
@@ -562,6 +558,7 @@ header {
 .card-produto img {
     display: block;
     width: 100%;
+    height: 220px;
     aspect-ratio: 4/3;
     object-fit: cover;
 }
@@ -571,17 +568,16 @@ header {
 }
 
 
-
 .info-produto h3{
     color: var(--chocolate);
-    font-size: 1.25rem;
+    font-size: 1.12rem;
     line-height: 1.3;
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
 }
 
 .info-produto p {
     color: var(--cinza);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.6;
 }
 
@@ -593,22 +589,27 @@ header {
 
 
 
+/* CONTATOS */
 #contatos {
     background-color: var(--chocolate);
     color: var(--off-white);
-    padding: 75px 24px;
+    padding: 48px 20px;
 }
 
 #contatos .titulo {
-    font-size: clamp(2rem, 8vw, 3.2rem);
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+    line-height: 1.12;
 }
+
+
 #contatos > p:first-child {
     color: var(--rosa-claro);
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: bold;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.15rem;
     text-transform: uppercase;
     margin-bottom: 10px;
+
 }
 
 
@@ -623,31 +624,35 @@ header {
 }
 
 #contatos > p:nth-of-type(2) {
-    margin-top: 20px;
+    margin-top: 16px;
     max-width: 500px;
-    line-height: 1.7;
+    line-height: 1.65;
+    font-size: 0.93rem;
+    
 }
 
 .redes {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin: 30px 0;
+    gap: 10px;
+    margin: 24px 0;
+
+    
 }
 
 .botao-contato {
-    min-height: 52px;
+    min-height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 14px 20px;
+    padding: 12px 16px;
     
     text-decoration: none;
     border: 1px solid var(--rosa-claro);
     color: var(--rosa-claro);
     border-radius: 4px;
     font-weight: bold;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     letter-spacing: 0.04rem;
     transition: 0.25s ease;
 }
@@ -672,35 +677,39 @@ header {
 }
 
 .frase-final {
-    margin-top: 60px;
+    margin-top: 40px;
     text-align: center;
     font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: var(--rosa-claro);
+    line-height: 1.3;
 }
 
 .mapa {
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 .mapa h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    margin-bottom: 18px;
+    font-size: 1.35rem;
+    margin-bottom: 14px;
     font-weight: 400;
 }
 
 .mapa iframe {
     display: block;
     width: 100%;
-    min-height: 280px;
+    height: 230px;
     border: 0;
     border-radius: 8px;
 }
+
+
+
+/* RODAPÉ */
 footer{
     background-color: var(--marrom);
     color: white;
-    padding: 35px 20px;
+    padding: 28px 16px;
     text-align: center;
 }
 
@@ -709,10 +718,10 @@ footer .logo {
 }
 
 footer p:last-child{
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--rosa-claro);
+    line-height: 1.5;
 }
-
 
 
 
@@ -722,7 +731,11 @@ footer p:last-child{
 
 /* CELULARES MAIS LARGOS E TABLETS */
 
-@media (min-width: 480px) {
+@media (min-width: 300px) {
+
+    #sobre .eyebrow{
+    margin-top: var(--espaco-lg);
+}
     .hero-clean-titulo {
         font-size: clamp(2.7rem, 7vw, 3.5rem);
     }
@@ -796,135 +809,7 @@ footer p:last-child{
 }
 
 
-/* ========================================
-   AJUSTES GERAIS — MOBILE FIRST
-   Adicione ao final do arquivo CSS
-======================================== */
 
-
-
-/* HISTÓRIA */
-
-
-
-/* PRODUTOS */
-#produtos {
-    padding: 32px 16px;
-}
-
-#produtos .titulo {
-    font-size: clamp(1.8rem, 7vw, 2.5rem);
-    line-height: 1.1;
-}
-
-.titulo-secao {
-    margin-bottom: 28px;
-}
-
-.titulo-secao > p:first-child {
-    font-size: 0.65rem;
-    letter-spacing: 0.12rem;
-}
-
-.titulo-secao > p:last-child {
-    font-size: 0.93rem;
-    line-height: 1.65;
-}
-
-.produtos-container {
-    gap: 20px;
-}
-
-.card-produto{
-    border-radius: 8px;
-}
-
-.card-produto img {
-    height: 220px;
-}
-
-.info-produto {
-    padding: 16px;
-}
-
-.info-produto h3 {
-    font-size: 1.12rem;
-    margin-bottom: 8px;
-}
-
-.info-produto p {
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-.categoria-produto {
-    font-size: 0.62rem;
-    letter-spacing: 0.1rem;
-}
-
-
-
-
-/* CONTATO */
-#contatos {
-    padding: 48px 20px;
-}
-
-#contatos .titulo {
-    font-size: clamp(1.8rem, 7vw, 2.5rem);
-    line-height: 1.12;
-}
-
-#contatos > p:first-child {
-    font-size: 0.65rem;
-    letter-spacing: 0.15rem;
-}
-
-#contatos > p:nth-of-type(2) {
-    margin-top: 16px;
-    font-size: 0.93rem;
-    line-height: 1.65;
-}
-
-.redes {
-    gap: 10px;
-    margin: 24px 0;
-}
-
-.botao-contato {
-    min-height: 48px;
-    padding: 12px 16px;
-    font-size: 0.8rem;
-}
-
-.frase-final {
-    margin-top: 40px;
-    font-size: 1.5rem;
-    line-height: 1.3;
-}
-
-.mapa {
-    margin-top: 40px;
-}
-
-.mapa h3 {
-    font-size: 1.35rem;
-    margin-bottom: 14px;
-}
-
-.mapa iframe {
-    height: 230px;
-}
-
-/* RODAPÉ */
-footer {
-    padding: 28px 16px;
-}
-
-footer p:last-child {
-    font-size: 0.75rem;
-    line-height: 1.5;
-}
 
 /* CELULARES MUITO ESTREITOS */
 @media (max-width: 360px) {
